@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart City Traffic Visualizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="top">
+  <strong>Smart City Traffic</strong>
+  <a href="#dashboard">Dashboard</a>
+  <a href="#guide">Algorithm guide</a>
+  <a href="#about">About</a>
+</nav>
+
+<header class="hero">
+  <h1>Smart City Traffic Visualizer</h1>
+  <p>Rank congested roads with sorting algorithms, then route a vehicle across the city with BFS, DFS and Dijkstra.</p>
+</header>
+
+<main id="dashboard">
+  <div class="tabs">
+    <button id="tabSort" class="on">Rank congested roads</button>
+    <button id="tabPath">Find a route</button>
+  </div>
+
+  <section class="kpis">
+    <div class="kpi"><span id="k1l">Steps</span><b id="k1">0</b></div>
+    <div class="kpi"><span id="k2l">Comparisons</span><b id="k2">0</b></div>
+    <div class="kpi"><span id="k3l">Swaps</span><b id="k3">0</b></div>
+    <div class="kpi"><span>Time</span><b id="k4">0.0s</b></div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <div class="controls">
+        <label>Algorithm <select id="alg"></select></label>
+        <label>Speed <input type="range" id="speed" min="1" max="100" value="60"></label>
+        <label id="sizeBox">Roads <input type="range" id="size" min="10" max="60" value="30"></label>
+        <button id="newBtn">New data</button>
+        <button id="startBtn" class="go">Start</button>
+        <button id="stopBtn">Stop</button>
+      </div>
+      <canvas id="cv" width="960" height="520"></canvas>
+      <p id="stats" role="status">Press Start.</p>
+      <p class="legend" id="legend"></p>
+    </section>
+
+    <aside class="card side">
+      <h2 id="sName"></h2>
+      <p id="desc"></p>
+      <table>
+        <tr><td>Best</td><td id="cBest"></td></tr>
+        <tr><td>Average</td><td id="cAvg"></td></tr>
+        <tr><td>Worst</td><td id="cWorst"></td></tr>
+        <tr><td>Space</td><td id="cSpace"></td></tr>
+      </table>
+      <p class="city" id="city"></p>
+    </aside>
+  </div>
+</main>
+
+<section id="guide">
+  <h2>Algorithm guide</h2>
+  <div class="cards" id="cards"></div>
+</section>
+
+<footer id="about">
+  <p>Smart City Traffic Visualizer: a DSA project built with HTML, CSS and JavaScript.</p>
+  <p>Built by Palak Rana</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
